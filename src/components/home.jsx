@@ -13,13 +13,13 @@ function SortbyASC(){
   
   const items=[...(mobileListAfterFilter.length===0?mobileList:mobileListAfterFilter)];    
   var updatedList=items.sort((a,b)=>{return a.brandname.localeCompare(b.brandname)})
-  dispatch(setMobile(updatedList));
-  }
+  dispatch((mobileListAfterFilter.length===0?mobileList:mobileListAfterFilter)?filterMobilelist(updatedList):setMobile(updatedList));
+}
 function SortbyDSC(){
   
   const items=[...(mobileListAfterFilter.length===0?mobileList:mobileListAfterFilter)];    
     var updatedList=items.sort((a,b)=>{return b.brandname.localeCompare(a.brandname)})
-    dispatch(setMobile(updatedList));
+    dispatch((mobileListAfterFilter.length===0?mobileList:mobileListAfterFilter)?filterMobilelist(updatedList):setMobile(updatedList));
     }
 function filter(value){
       
